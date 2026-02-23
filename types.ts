@@ -1,4 +1,3 @@
-
 export interface DetergentPoint {
   kg: number;
   ml: number;
@@ -10,6 +9,7 @@ export interface DetergentInfo {
   points: DetergentPoint[];
   capSize: number;
   color: string;
+  customCalc?: (kg: number) => number;
 }
 
 export interface CalculationResult {

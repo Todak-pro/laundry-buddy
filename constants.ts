@@ -1,4 +1,3 @@
-
 import { DetergentInfo } from './types';
 
 export const TOTAL_CAPACITY_KG = 16;
@@ -38,5 +37,19 @@ export const DETERGENTS: DetergentInfo[] = [
       { kg: 5, ml: 80 },
       { kg: 10, ml: 110 }
     ]
+  },
+  {
+    id: 'downy',
+    name: '다우니 (Downy)',
+    capSize: 50,
+    color: 'bg-rose-400',
+    points: [],
+    customCalc: (kg: number) => {
+      if (kg <= 3) return 17;
+      if (kg <= 5) return 25;
+      if (kg <= 7) return 33;
+      if (kg < 8) return 50;
+      return kg * 6.7;
+    }
   }
 ];
